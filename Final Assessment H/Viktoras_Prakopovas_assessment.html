@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Viktoras Prakopovas</title>
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="CSS/Viktoras_Prakopovas.css">
+
+    <!-- Fade‑in effect class -->
+    <script>
+        document.body?.classList?.add("fade-out");
+    </script>
+</head>
+
+<body class="Background fade-out">
+
+    <!-- NAVBAR -->
+    <div class="Navbar">
+        <a class="active" href="#Home">Home</a>
+        <a href="#About">About</a>
+        <a href="#GitHub">My Portfolio</a>
+        <a href="#Contact">Contact</a>
+    </div>
+
+    <!-- HERO VIDEO -->
+    <section id="Home" class="hero">
+        <video class="hero-video" autoplay muted loop id="Amazon_Video">
+            <source src="Videos/Amazon_Video_2.mp4" type="video/mp4">
+            Your browser does not support HTML5 video.
+        </video>
+    </section>
+
+    <!-- VIDEO TEXT OVERLAY -->
+    <div class="Video_Text">
+        <h1 class="white-text">Welcome to Amazon :)</h1>
+
+        <p class="center">
+            <q>“We're not competitor obsessed, we're customer obsessed.
+                <br>We start with what the customer needs and we work backwards.”
+            </q>
+            <br>— Jeff Bezos
+            <br><br>
+            My name is Viktoras. I have been delivering smiles with Amazon for 15 years.
+            <br><br>
+            Welcome to my portfolio website. On it, I will tell you about my background and experience.
+            <br><br>
+            Thank you for stopping by and enjoy!
+        </p>
+    </div>
+
+    <!-- ABOUT SECTION -->
+    <div class="Row" id="About">
+
+        <!-- LEFT COLUMN — SLIDESHOW -->
+        <div class="Column_2">
+            <div class="slideshow-container">
+                <img class="slide" src="Images/Amazon_vans.jpg" alt="Amazon Vans">
+                <img class="slide" src="Images/Amazon_office_building.jpg" alt="Amazon Office">
+                <img class="slide" src="Images/Amazon_parcel_by_the_door.jpg" alt="Amazon Parcel">
+            </div>
+        </div>
+
+        <!-- RIGHT COLUMN — ABOUT TEXT -->
+        <div class="Column_1 about-slide">
+            <h1>About</h1>
+            <p>
+                I am currently working as a Delivery Station Liaison (DSL) with Amazon Delivery Station in North Wales.
+                I like exploring new opportunities and learning new skills.
+                <br><br>
+                I am a student of
+                <a href="https://www.learncodinganywhere.com" target="_blank">The Tech Academy</a>’s Software Developer Boot Camp,
+                currently learning HTML, CSS, JavaScript, SQL, C#, and more.
+                <br><br>
+                Once I complete the studies, I am planning to work as a freelance Web Developer.
+                <a href="#Contact">Contact me below!</a>
+            </p>
+        </div>
+    </div>
+
+    <!-- GITHUB SECTION -->
+    <div class="Row" id="GitHub">
+
+        <!-- LEFT COLUMN -->
+        <div class="Column_1">
+            <h1>My Modest Portfolio :)</h1>
+            <p>
+                You can view my coding projects on my GitHub profile here:
+            </p>
+            <p class="center">
+                <a href="https://github.com/53rm0n1cD3v/HTML-And-CSS-Projects" target="_blank">
+                    The Tech Academy GitHub
+                </a>
+            </p>
+        </div>
+
+        <!-- RIGHT COLUMN -->
+        <div class="Column_2">
+            <a href="https://github.com/the-tech-academy" target="_blank">
+                <img src="Images/Github_Logo.jpg" alt="GitHub Logo">
+            </a>
+        </div>
+    </div>
+
+    <!-- CONTACT SECTION -->
+    <button id="OpenPopupBtn" class="popup-btn">Open Contact Form</button>
+
+    <div class="Row" id="Contact">
+
+        <!-- LEFT COLUMN — IMAGE -->
+        <div class="Column_2 Column_tall">
+            <img src="Images/Amazon_office_building.jpg" alt="Amazon Office">
+        </div>
+
+        <!-- RIGHT COLUMN — FORM -->
+        <div class="Column_1 Column_tall">
+            <h1>Contact</h1>
+
+            <form id="ContactForm" action="" method="POST">
+                <label>Name:</label>
+                <input type="text" id="Name" name="Name" placeholder="Please enter your name">
+
+                <label>Email:</label>
+                <input type="text" id="Email" name="Email" placeholder="Please enter your email">
+
+                <label>Phone:</label>
+                <input type="text" id="Phone" name="Phone" placeholder="Please enter your phone number">
+
+                <label>Message:</label>
+                <input type="text" id="Message" name="Message" placeholder="Please write your message">
+
+                <input type="submit" value="SUBMIT">
+            </form>
+        </div>
+    </div>
+
+    <!-- POPUP CONTACT FORM -->
+    <div id="PopupForm" class="popup-overlay">
+        <div class="popup-content">
+            <span id="ClosePopupBtn" class="close-btn">&times;</span>
+
+            <h2>Contact Me</h2>
+
+            <form id="PopupContactForm">
+                <label>Name:</label>
+                <input type="text" id="PopupName" placeholder="Enter your name">
+
+                <label>Email:</label>
+                <input type="text" id="PopupEmail" placeholder="Enter your email">
+
+                <label>Phone:</label>
+                <input type="text" id="PopupPhone" placeholder="Enter your phone number">
+
+                <label>Message:</label>
+                <input type="text" id="PopupMessage" placeholder="Write your message">
+
+                <input type="submit" value="SEND">
+            </form>
+        </div>
+    </div>
+
+    <!-- STICKY CONTACT BUTTON -->
+    <button id="StickyContactBtn" class="sticky-contact-btn">Contact</button>
+
+    <!-- FOOTER -->
+    <footer>
+        <p class="center">
+            &copy; Amber Solutions Inc.,
+            <a href="https://www.learncodinganywhere.com/" target="_blank">The Tech Academy</a>
+        </p>
+    </footer>
+
+    <!-- MAIN JS FILE -->
+    <script src="JS/Viktoras_Prakopovas.js"></script>
+
+</body>
+</html>

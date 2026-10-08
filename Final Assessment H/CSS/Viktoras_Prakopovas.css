@@ -1,0 +1,370 @@
+/****************************************
+ * GLOBAL RESET & BASE STYLING
+ ****************************************/
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: Avant Garde, Helvetica, Arial;
+    letter-spacing: .15vw;
+    font-size: 1.4vw;
+    overflow-x: hidden;
+    user-select: none;
+    opacity: 1;
+    transition: opacity 2s ease-in;
+}
+
+body.fade-out {
+    opacity: 0.1;
+}
+
+/****************************************
+ * HEADINGS
+ ****************************************/
+h1 {
+    text-transform: uppercase;
+    text-align: center;
+    margin-top: 3%;
+    color: #1a1a1a;
+    font-family: "Trebuchet MS", Optima;
+    opacity: 0;
+    animation: fadeInH1 2.5s ease-in forwards;
+}
+
+@keyframes fadeInH1 {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+h1:hover {
+    filter: grayscale(5%);
+    transform: scale(1.1);
+    transition: transform 1s;
+}
+
+/****************************************
+ * PARAGRAPHS
+ ****************************************/
+p {
+    font-family: Perpetua, Rockwell Extra Bold;
+    text-align: justify;
+    letter-spacing: .1vw;
+    font-size: 2vw;
+    padding: 1vw;
+}
+
+p:hover {
+    transform: scale(1.01);
+    transition: transform 1s;
+}
+
+.center {
+    text-align: center;
+}
+
+.center:hover {
+    transform: scale(1.1);
+    transition: transform 2s;
+}
+
+/****************************************
+ * LINKS
+ ****************************************/
+a {
+    color: blue;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+/****************************************
+ * IMAGES
+ ****************************************/
+img {
+    filter: grayscale(75%);
+    border-radius: 8px;
+    max-width: 100%;
+    display: block;
+    margin: auto;
+    transition: filter 1s, transform 1s;
+}
+
+img:hover {
+    filter: grayscale(5%);
+    transform: scale(1.05);
+}
+
+/****************************************
+ * NAVBAR
+ ****************************************/
+.Navbar {
+    overflow: hidden;
+    background-color: black;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+    animation: moveNav 1.5s ease-out;
+}
+
+@keyframes moveNav {
+    from { left: -100vw; }
+    to { left: 0; }
+}
+
+.Navbar a {
+    float: left;
+    display: block;
+    color: white;
+    padding: .75vw 1vw;
+    font-size: 1.5vw;
+    text-align: center;
+    text-decoration: none;
+    position: relative;
+    animation: moveNavText 2s ease-out;
+}
+
+@keyframes moveNavText {
+    from { top: -100vw; }
+    to { top: 0; }
+}
+
+.Navbar a:hover {
+    background-color: #f4f4f4;
+    color: black;
+    font-weight: bold;
+    transition: 0.5s ease-in;
+}
+
+.Navbar a.active {
+    background-color: darkgray;
+}
+
+/****************************************
+ * HERO VIDEO
+ ****************************************/
+.hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.hero-video {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.Video_Text {
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    width: 100%;
+    padding-top: 10vh;
+    height: 100vh;
+    animation: moveVideoText 2.5s ease-out;
+}
+
+@keyframes moveVideoText {
+    from { top: -100vw; }
+    to { top: 0; }
+}
+
+/****************************************
+ * TABLE / COLUMN LAYOUT
+ ****************************************/
+* {
+    box-sizing: border-box;
+}
+
+.Row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.Column_1, .Column_2 {
+    float: left;
+    width: 50%;
+    padding: 1.6%;
+    min-height: 450px;
+}
+
+.Column_1 {
+    background-color: #f2f2f2;
+}
+
+.Column_2 {
+    background-color: #4d4d4d;
+}
+
+.Column_tall {
+    min-height: 550px;
+}
+
+/****************************************
+ * ABOUT SECTION ANIMATION
+ ****************************************/
+.about-slide {
+    position: relative;
+    opacity: 0;
+    animation: slideInAbout 2s ease-out forwards;
+}
+
+@keyframes slideInAbout {
+    from { transform: translateX(-100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+/****************************************
+ * SLIDESHOW (FIXED + WORKING)
+ ****************************************/
+.slideshow-container {
+    position: relative;
+    width: 100%;
+    height: 340px;
+    overflow: hidden;
+}
+
+.slide {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 340px;
+    display: none;          /* key for JS logic */
+    object-fit: cover;
+    border-radius: 20px;
+    filter: grayscale(75%);
+}
+
+
+/****************************************
+ * CONTACT FORM
+ ****************************************/
+form {
+    background-color: #f2f2f2;
+    padding: 1vw;
+    border-radius: 5px;
+}
+
+input[type=text] {
+    width: 100%;
+    padding: .93vw;
+    margin: .6vw 0;
+    border: none;
+    background: Gainsboro;
+    font-size: 1vw;
+    border-radius: 4px;
+}
+
+input[type=text]:hover {
+    box-shadow: 0 0 5px #000 inset;
+}
+
+input[type=submit] {
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    padding: 1.5vw;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+}
+
+input[type=submit]:hover {
+    background-color: white;
+    color: black;
+    border-color: silver;
+    transform: scale(1.1);
+    transition: 1s;
+}
+
+/****************************************
+ * POPUP CONTACT FORM
+ ****************************************/
+.popup-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.7);
+    z-index: 9999;
+}
+
+.popup-content {
+    background: #fff;
+    width: 400px;
+    padding: 20px;
+    margin: 10% auto;
+    border-radius: 10px;
+    position: relative;
+    animation: popupFade 0.5s ease;
+}
+
+@keyframes popupFade {
+    from { transform: scale(0.7); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+.popup-btn {
+    background: black;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.popup-btn:hover {
+    background: white;
+    color: black;
+    transform: scale(1.1);
+}
+
+/****************************************
+ * STICKY CONTACT BUTTON
+ ****************************************/
+.sticky-contact-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: navy;
+    color: white;
+    padding: 14px 20px;
+    border: none;
+    border-radius: 50px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 9999;
+    box-shadow: 0 0 10px rgba(0,0,0,0.4);
+    transition: transform 0.3s, background 0.3s;
+}
+
+.sticky-contact-btn:hover {
+    background: white;
+    color: navy;
+    transform: scale(1.1);
+}
+
+/****************************************
+ * FOOTER
+ ****************************************/
+footer {
+    padding: 2%;
+    background-color: white;
+    text-align: center;
+}
